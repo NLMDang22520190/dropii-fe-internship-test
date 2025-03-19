@@ -35,7 +35,7 @@
   --color-discount: #ff3b30;
   --color-freeLabel: #00ba34;
   --color-price: #ff8a00;
-  --color-flashSale: #ff2d55;
+  --color-flashSale: #ffe7ed;
   --color-sold: #8e8e93;
 
   --radius: 0.5rem;
@@ -113,6 +113,10 @@
 
   .badge-sold {
     @apply text-sold text-xs font-normal;
+  }
+
+  .flash-text {
+    @apply text-[#e63059] text-xs font-bold italic;
   }
 
   .wishlist-btn {
