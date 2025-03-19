@@ -1,0 +1,246 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0080ff;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #e6f2ff;
+  --color-secondary-foreground: #1c2233;
+
+  --color-muted: #e6f2ff;
+  --color-muted-foreground: #727d91;
+
+  --color-accent: #e6f2ff;
+  --color-accent-foreground: #1c2233;
+
+  --color-destructive: #e63946;
+  --color-destructive-foreground: #f9fcff;
+
+  --color-border: #d3dce6;
+  --color-input: #d3dce6;
+  --color-ring: #0b0d13;
+
+  --color-background: #ffffff;
+  --color-foreground: #1a1a1a;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1a1a;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1a1a1a;
+
+  --color-dark-background: #0d0d0d;
+  --color-dark-foreground: #fafafa;
+
+  --color-discount: #ff3b30;
+  --color-freeLabel: #00ba34;
+  --color-price: #ff8a00;
+  --color-flashSale: #ff2d55;
+  --color-sold: #8e8e93;
+
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(107, 114, 128, 0.2);
+    border-radius: 3px;
+    transition: background-color 0.3s;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(107, 114, 128, 0.4);
+  }
+}
+
+@layer components {
+  .product-card {
+    @apply relative bg-white rounded-xl overflow-hidden border border-border transition-all duration-300 hover:shadow-lg;
+  }
+
+  .product-title {
+    @apply text-sm font-medium leading-tight line-clamp-2 min-h-[2.5rem];
+  }
+
+  .price-text {
+    @apply text-price font-medium;
+  }
+
+  .badge-discount {
+    @apply bg-discount text-white text-sm font-medium px-2 py-1 rounded-br-md;
+  }
+
+  .badge-free {
+    @apply bg-freeLabel text-white text-xs font-medium px-2 py-1 rounded-md flex items-center gap-1 shadow-sm;
+  }
+
+  .badge-gift {
+    @apply bg-amber-500 text-white text-xs font-medium px-2 py-1 rounded-md flex items-center gap-1 shadow-sm;
+  }
+
+  .badge-flash {
+    @apply bg-flashSale text-white text-xs font-medium px-2 py-1 rounded-md flex items-center gap-1;
+  }
+
+  .badge-sold {
+    @apply text-sold text-xs font-normal;
+  }
+
+  .wishlist-btn {
+    @apply cursor-pointer  absolute top-2 right-2 bg-white/80 backdrop-blur-sm  p-1.5 rounded-full shadow-sm transition-all duration-300 hover:scale-110 active:scale-95;
+  }
+
+  .sort-btn {
+    @apply cursor-pointer flex items-center gap-1 px-3 py-1.5 rounded-lg border border-border bg-card hover:bg-muted transition-colors text-sm;
+  }
+
+  .sort-btn.active {
+    @apply border-primary text-primary;
+  }
+}
+
+@layer utilities {
+  @apply container {
+    center: true;
+    padding: 2rem;
+    screens: {
+      sm: 640px;
+      md: 768px;
+      lg: 1024px;
+      xl: 1280px;
+      2xl: 1400px;
+    }
+  }
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-down {
+    0% {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes scale-in {
+    0% {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes heart-beat {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+  }
+
+  .animate-accordion-down {
+    animation: accordion-down 0.2s ease-out;
+  }
+  .animate-accordion-up {
+    animation: accordion-up 0.2s ease-out;
+  }
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+  .animate-fade-out {
+    animation: fade-out 0.3s ease-out;
+  }
+  .animate-slide-up {
+    animation: slide-up 0.4s ease-out;
+  }
+  .animate-slide-down {
+    animation: slide-down 0.4s ease-out;
+  }
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out;
+  }
+  .animate-heart-beat {
+    animation: heart-beat 0.45s ease-in-out;
+  }
+}
