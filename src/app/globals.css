@@ -84,11 +84,11 @@
 
 @layer components {
   .product-card {
-    @apply relative bg-white rounded-xl overflow-hidden border border-border transition-all duration-300 hover:shadow-lg;
+    @apply relative cursor-pointer bg-white rounded-xl overflow-hidden border border-border transition-all duration-300 hover:shadow-lg;
   }
 
   .product-title {
-    @apply text-sm font-medium leading-tight line-clamp-2 min-h-[2.5rem];
+    @apply text-sm font-medium  line-clamp-2 min-h-[2.5rem];
   }
 
   .price-text {
