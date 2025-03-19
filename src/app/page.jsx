@@ -13,7 +13,7 @@ export default function Home() {
         Discover amazing products and great deals.
       </p>
       <button
-        className="cursor-poiner bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-blue-700 transition"
+        className="cursor-pointer bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-blue-700 transition"
         onClick={() => router.push("/products")}
       >
         Shop Now
