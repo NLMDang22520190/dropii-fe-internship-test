@@ -108,7 +108,7 @@
   }
 
   .badge-flash {
-    @apply bg-flashSale text-white text-xs font-medium px-2 py-1 rounded-md flex items-center gap-1;
+    @apply bg-flashSale text-white text-xs font-medium px-2 py-1 rounded-md flex items-center gap-1 justify-center;
   }
 
   .badge-sold {

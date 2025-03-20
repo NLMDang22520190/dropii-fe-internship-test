@@ -68,10 +68,14 @@ const ProductCard = ({ product, onWishlistToggle }) => {
       <div className="p-3 space-y-2">
         {product.flashSale?.active && (
           <div className="badge-flash">
-            <span className="flash-text">FLASH</span>
-            <Zap className="w-3 h-3 text-yellow-300" fill="yellow" />
+            <div className="flex items-center gap-1">
+              <span className="flash-text">FLASH</span>
+              <Zap className="w-3 h-3 text-yellow-300 " fill="yellow" />
+            </div>
             <span className="flash-text">SALE</span>
-            <span className="text-[#ec5d7e]">・{product.flashSale.endsAt}</span>
+            <span className="text-[#ec5d7e] hidden sm:block">
+              {product.flashSale.endsAt}
+            </span>
           </div>
         )}
         <h3 className="product-title">{product.title}</h3>

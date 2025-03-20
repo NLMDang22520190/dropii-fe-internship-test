@@ -59,7 +59,7 @@ const generateMockProducts = (count) => {
       flashSale: hasFlashSale
         ? {
             active: true,
-            endsAt: `${Math.floor(Math.random() * 23) + 1}:${
+            endsAt: `・${Math.floor(Math.random() * 23) + 1}:${
               Math.floor(Math.random() * 59) + 1
             }・${Math.floor(Math.random() * 30) + 1}/12`,
           }
